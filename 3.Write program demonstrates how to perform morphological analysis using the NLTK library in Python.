@@ -1,0 +1,24 @@
+from nltk.stem import PorterStemmer, WordNetLemmatizer
+from nltk.corpus import wordnet
+import nltk
+
+# Download required resources
+nltk.download('wordnet')
+nltk.download('omw-1.4')
+
+# Sample words
+words = ["running", "flies", "studies", "better"]
+
+# Initialize stemmer and lemmatizer
+stemmer = PorterStemmer()
+lemmatizer = WordNetLemmatizer()
+
+# Stemming
+print("Stemming:")
+for word in words:
+    print(word, "->", stemmer.stem(word))
+
+# Lemmatization
+print("\nLemmatization:")
+for word in words:
+    print(word, "->", lemmatizer.lemmatize(word, pos=wordnet.VERB))
