@@ -1,0 +1,15 @@
+from nltk.stem import PorterStemmer
+import nltk
+
+# Download resources if needed
+nltk.download('punkt')
+
+# Initialize the Porter Stemmer
+stemmer = PorterStemmer()
+
+# List of words to stem
+words = ["running", "jumps", "easily", "fairly", "studies", "happier", "happiness"]
+
+# Perform stemming
+for word in words:
+    print(word, "->", stemmer.stem(word))
