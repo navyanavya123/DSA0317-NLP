@@ -1,0 +1,17 @@
+import re
+
+text = "The rain in Spain stays mainly in the plain."
+pattern = r'\b[Ss]\w+'
+
+# Find all matches
+matches = re.findall(pattern, text)
+print("Matches:", matches)
+
+# Search for the first match
+search_result = re.search(pattern, text)
+if search_result:
+    print(f"First match: {search_result.group()}")
+
+# Replace matches with 'Found'
+replaced_text = re.sub(pattern, 'Found', text)
+print("Replaced text:", replaced_text)
